@@ -6,6 +6,7 @@ using System.Linq;
 using System.Reflection.Emit;
 using Chutzpah.Models;
 using Chutzpah.Wrappers;
+using Microsoft.Build.Utilities;
 
 namespace Chutzpah
 {
@@ -200,7 +201,12 @@ namespace Chutzpah
             IDictionary<string, string> chutzpahCompileVariables = new Dictionary<string, string>();
 
             var clrDir = System.Runtime.InteropServices.RuntimeEnvironment.GetRuntimeDirectory();
-            var msbuildExe = Path.Combine(clrDir, "msbuild.exe");
+
+            var msbuildExe = ToolLocationHelper.GetPathToBuildToolsFile("msbuild.exe", "12.0", DotNetFrameworkArchitecture.Current)
+                              ?? ToolLocationHelper.GetPathToBuildToolsFile("msbuild.exe", "14.0", DotNetFrameworkArchitecture.Current)
+                              ?? ToolLocationHelper.GetPathToBuildToolsFile("msbuild.exe", "4.0", DotNetFrameworkArchitecture.Current)
+                             ?? Path.Combine(clrDir, "msbuild.exe");
+
             var powershellExe = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"windowspowershell\v1.0\powershell.exe");
 
 
