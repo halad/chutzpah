@@ -158,7 +158,8 @@ namespace Chutzpah
                     refList.Add(new Script(referencedFile));
                 }
                 else if (referencePath.EndsWith(Constants.HtmlScriptExtension, StringComparison.OrdinalIgnoreCase) ||
-                         referencePath.EndsWith(Constants.HtmScriptExtension, StringComparison.OrdinalIgnoreCase))
+                         referencePath.EndsWith(Constants.HtmScriptExtension, StringComparison.OrdinalIgnoreCase) ||
+                         referencePath.EndsWith(Constants.CshtmlScriptExtension, StringComparison.OrdinalIgnoreCase))
                 {
                     refList.Add(new Html(referencedFile, fileSystem));
                 }
@@ -167,8 +168,11 @@ namespace Chutzpah
 
         private IList<TestHarnessItem> ChooseRefList(ReferencedFile referencedFile, string referencePath)
         {
-            var codeCoverageEnabled = (!chutzpahTestSettings.EnableCodeCoverage.HasValue && testOptions.CoverageOptions.Enabled)
-                                      || (chutzpahTestSettings.EnableCodeCoverage.HasValue && chutzpahTestSettings.EnableCodeCoverage.Value);
+            var codeCoverageEnabled = (!chutzpahTestSettings.EnableCodeCoverage.HasValue &&
+                                       testOptions.CoverageOptions.Enabled)
+                                      ||
+                                      (chutzpahTestSettings.EnableCodeCoverage.HasValue &&
+                                       chutzpahTestSettings.EnableCodeCoverage.Value);
 
             // If CodeCoverage is enabled and we are in Execution mode make sure we load requirejs before the code coverage files
             var amdLoader = codeCoverageEnabled
@@ -194,7 +198,8 @@ namespace Chutzpah
 
             }
             else if (referencePath.EndsWith(Constants.HtmlScriptExtension, StringComparison.OrdinalIgnoreCase) ||
-                     referencePath.EndsWith(Constants.HtmScriptExtension, StringComparison.OrdinalIgnoreCase))
+                     referencePath.EndsWith(Constants.HtmScriptExtension, StringComparison.OrdinalIgnoreCase) ||
+                     referencePath.EndsWith(Constants.CshtmlScriptExtension, StringComparison.OrdinalIgnoreCase))
             {
                 list = ReferencedHtmlTemplates;
             }

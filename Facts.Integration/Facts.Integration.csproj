@@ -219,6 +219,9 @@
     <Content Include="JS\Test\Coverage\SuccessPercentage\test.js">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="JS\Test\HtmlTemplate\template.tmpl.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <Content Include="JS\Test\HtmlTemplate\template2.tmpl.html">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

@@ -1,4 +1,5 @@
 ﻿/// <template path="template.tmpl.html"/>
+/// <template path="template.tmpl.cshtml"/>
 /// <template path="template2.tmpl.html"/>
 /// <reference path="../jquery-1.7.1.min.js" />
 /// <reference path="jasmine.js" />
@@ -14,7 +15,13 @@ describe("Html Template Test - Jasmine", function () {
         // Templatediv2 should already be in the body since it is not wrapped
         var templateDiv2 = $("#testTemplateDiv2");
 
+        //cshtml  test
+        //data-namespace="common.inputs.textareaFor"
+        var commonInputs = $("[data-namespace='common.inputs.textareaFor']");
+
         expect(templateDiv.length).toEqual(1);
         expect(templateDiv2.length).toEqual(1);
+
+        expect(commonInputs.length).toEqual(1);
     });
 });

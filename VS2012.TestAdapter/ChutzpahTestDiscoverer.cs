@@ -16,6 +16,7 @@ namespace Chutzpah.VS2012.TestAdapter
     [FileExtension(Chutzpah.Constants.JavaScriptExtension)]
     [FileExtension(Chutzpah.Constants.HtmlScriptExtension)]
     [FileExtension(Chutzpah.Constants.HtmScriptExtension)]
+    [FileExtension(Chutzpah.Constants.CshtmlScriptExtension)]
     [FileExtension(Chutzpah.Constants.JsonExtension)]
     [DefaultExecutorUri(AdapterConstants.ExecutorUriString)]
     public class ChutzpahTestDiscoverer : ITestDiscoverer

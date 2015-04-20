@@ -23,7 +23,8 @@ namespace Chutzpah
                 {Constants.CoffeeScriptExtension,PathType.CoffeeScript},
                 {Constants.JavaScriptExtension,PathType.JavaScript},
                 {Constants.HtmlScriptExtension,PathType.Html},
-                {Constants.HtmScriptExtension,PathType.Html}
+                {Constants.HtmScriptExtension,PathType.Html},
+                {Constants.CshtmlScriptExtension,PathType.Html}
             };
 
         public FileProbe(IEnvironmentWrapper environment, IFileSystemWrapper fileSystem)

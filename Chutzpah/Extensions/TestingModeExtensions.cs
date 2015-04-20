@@ -16,7 +16,7 @@ namespace Chutzpah.Extensions
             ExtensionMap[TestingMode.JavaScript] = new  List<string>{Constants.JavaScriptExtension};
             ExtensionMap[TestingMode.CoffeeScript] = new  List<string>{Constants.CoffeeScriptExtension};
             ExtensionMap[TestingMode.TypeScript] = new  List<string>{Constants.TypeScriptExtension};
-            ExtensionMap[TestingMode.HTML] = new  List<string>{Constants.HtmlScriptExtension, Constants.HtmScriptExtension};
+            ExtensionMap[TestingMode.HTML] = new  List<string>{Constants.HtmlScriptExtension, Constants.HtmScriptExtension, Constants.CshtmlScriptExtension};
 
             ExtensionMap[TestingMode.All] = new List<string>();
             ExtensionMap.Values.ForEach(ext => ExtensionMap[TestingMode.All].AddRange(ext));

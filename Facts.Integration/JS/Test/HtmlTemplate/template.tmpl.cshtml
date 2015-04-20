@@ -1,0 +1,123 @@
+<script type="text/template" data-namespace="common.inputs.textareaFor">
+    <textarea {{{attrs}}}>{{value}}</textarea>
+</script>
+
+<script type="text/template" data-namespace="common.inputs.inputFor">
+    <input type="text" {{{attrs}}} value="{{value}}" />
+</script>
+
+<script type="text/template" data-namespace="common.inputs.validationSpan">
+    <span class="help-block field-validation-valid" data-valmsg-for="{{inputName}}" data-valmsg-replace="true"></span>
+</script>
+
+<script type="text/template" data-namespace="common.loading">
+    <div class="loading">
+        <img src="/Content/images/layout/loading.gif" class="loading-animation" />
+    </div>
+</script>
+
+<script type="text/template" data-namespace="common.loadingError">
+    <p style="text-align: center" class="pal">
+        An error occurred.{{#if showReload}} <a href="#" class="js-reload">Try again</a>.{{/if}}
+    </p>
+</script>
+
+<script type="text/template" data-namespace="common.confirmModal">
+    <div class="modal-header">
+        <a class="close" data-dismiss="modal">×</a>
+        <h3>{{title}}</h3>
+    </div>
+    <div class="modal-body pvl">
+        {{#if messageInHtml}}{{{message}}}{{else}}<p class="pvs">{{message}}</p>{{/if}}
+    </div>
+    <div class="modal-footer">
+        <a href="" class="btn{{#if confirmButtonClass}} {{confirmButtonClass}}{{/if}} js-confirm">{{confirmButtonText}}</a>
+        <a href="#" class="btn" data-dismiss="modal">{{cancelButtonText}}</a>
+    </div>
+</script>
+
+<script type="text/template" data-namespace="common.longTextShortener">
+    <span class="some-text">
+        {{shortText}}&hellip;
+        <span class="see-more-text link-like">More</span>
+    </span>
+    <span class="all-text">
+        {{fullText}}
+        <span class="see-less-text link-like">Less</span>
+    </span>
+</script>
+
+<script type="text/template" data-namespace="common.modelSourceLabel">
+    <span class="label va-top label-{{labelClass}}{{#if dampen}} label-colorize{{/if}}" title="Published from {{sourceName}}">
+        {{abbreviation}}
+    </span>
+</script>
+
+<script type="text/template" data-namespace="common.timeago">
+    <time class="js-timeago" title="{{formattedDatetime}}" datetime="{{rawDatetime}}">{{fromNow}}</time>
+</script>
+
+<script type="text/template" data-namespace="common.modal.layout">
+    {{#if withForm}}
+    <form>
+        {{/if}}
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>
+                {{title}}
+                <a href="#" style="display:none" class="mls help-link" target="_assemble_extra">
+                    <i class="icon-help-blue">
+                    </i>
+                </a>
+            </h3>
+        </div>
+        <div class="modal-body clearfix"></div>
+        <div class="modal-footer">
+            {{#if withForm}}<input type="submit" value="{{primaryButtonText}}" class="btn {{#if primaryButtonClass}}{{primaryButtonClass}}{{else}}btn-primary{{/if}}" />
+            {{else}}<a href="#" class="btn {{#if primaryButtonClass}}{{primaryButtonClass}}{{else}}btn-primary{{/if}}">{{primaryButtonText}}</a>{{/if}}
+            <a href="#" class="btn cancel" data-dismiss="modal">Cancel</a>
+        </div>
+        {{#if withForm}}
+    </form>{{/if}}
+</script>
+
+<script type="text/template" data-namespace="common.selector.layout">
+    <div class="selector clearfix reorderable">
+        <div class="pull-left select-from-list-container">
+            <p class="mbs">{{selectFromHeader}}</p>
+            <div class="search-box input-append"></div>
+            <div class="select-from-list"></div>
+        </div>
+        <div class="pull-left selector-arrow-col mtl">
+        </div>
+        <div class="pull-left selected-list-container">
+            <p class="mbs">{{selectedHeader}}</p>
+            <div class="selected-list"></div>
+            <p class="error help-block limit-error" style="display: none;">{{limitMessage}}</p>
+        </div>
+    </div>
+</script>
+
+<script type="text/template" data-namespace="common.selector.layout.search">
+    <input class="search" value="" />
+    <span class="add-on">
+        <i class="icon-search"></i>
+    </span>
+</script>
+
+<script type="text/template" data-namespace="common.selector.layout.item">
+    <a onclick="return false;" href="#" class="selector-item" data-id="{{id}}">
+        <span class="remove-me pull-right"><i class="icon-remove icon-white"></i></span>
+        <span class="move-arrow down-arrow pull-right"><i class="icon-fat-arrow-down icon-white"></i></span>
+        <span class="move-arrow up-arrow pull-right"><i class="icon-fat-arrow-up icon-white"></i></span>
+        <span class="item-name">{{name}}</span>
+        <div class="move-handle" title="Drag to reorder">::</div>
+    </a>
+</script>
+
+
+<script type="text/template" data-namespace="common.selector.layout.empty">
+    <div class="empty selected-list">
+        <div class="empty-message">No properties selected</div>
+    </div>
+</script>
